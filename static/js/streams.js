@@ -2,7 +2,7 @@
 const APP_ID = 'ea5472b2c2ad450397a718fa2e13d4e9'
 const TOKEN = sessionStorage.getItem('token')
 const CHANNEL = sessionStorage.getItem('room')
-let UID = sessionStorage.getItem('UID')
+let UID = Number(sessionStorage.getItem('UID'))
 
 let NAME = sessionStorage.getItem('name')
 
@@ -18,7 +18,7 @@ let joinAndDisplayLocalStream = async () => {
     client.on('user-left', handleUserLeft)
 
     try{
-        UID = await client.join(APP_ID, CHANNEL, TOKEN, UID)
+        await client.join(APP_ID, CHANNEL, TOKEN, UID)
     }catch(error){
         console.error(error)
         window.open('/', '_self')
