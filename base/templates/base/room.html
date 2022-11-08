@@ -1,4 +1,5 @@
 {% extends 'base/main.html' %}
+{% load static %}
 {% block content %}
 
 <main>
@@ -15,5 +16,6 @@
 
     </section>
 </main>
-
+<script src="{% static 'assets/AgoraRTC_N-4.8.0.js' %}"></script>
+<script src="{% static 'js/streams.js' %}"></script>
 {% endblock %}
